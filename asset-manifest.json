@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "//hasangwon.github.io/mbtimemo/static/css/main.cd4ccc36.css",
-    "main.js": "//hasangwon.github.io/mbtimemo/static/js/main.ba10440b.js",
+    "main.css": "//hasangwon.github.io/mbtimemo/static/css/main.742580ab.css",
+    "main.js": "//hasangwon.github.io/mbtimemo/static/js/main.60a037a9.js",
     "index.html": "//hasangwon.github.io/mbtimemo/index.html",
-    "main.cd4ccc36.css.map": "//hasangwon.github.io/mbtimemo/static/css/main.cd4ccc36.css.map",
-    "main.ba10440b.js.map": "//hasangwon.github.io/mbtimemo/static/js/main.ba10440b.js.map"
+    "main.742580ab.css.map": "//hasangwon.github.io/mbtimemo/static/css/main.742580ab.css.map",
+    "main.60a037a9.js.map": "//hasangwon.github.io/mbtimemo/static/js/main.60a037a9.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd4ccc36.css",
-    "static/js/main.ba10440b.js"
+    "static/css/main.742580ab.css",
+    "static/js/main.60a037a9.js"
   ]
 }
