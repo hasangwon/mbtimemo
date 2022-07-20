@@ -46,7 +46,7 @@
 }
 
 .mbtiBox {
-  max-width: 380px;
+  width: 360px;
   padding: 10px;
   background-color: antiquewhite;
   border-radius: 10px;
