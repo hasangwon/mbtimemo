@@ -27,8 +27,7 @@ const App = () => {
     const mbti = firestore.collection("mbti");
 
     if (!english.test(person.mbti)) {
-      alert("MBTI 영어로 써");
-      return;
+      alert("MBTI는 영어로 쓰시는게 어떨까요?");
     }
     if (person.name && person.mbti) {
       mbti.doc(person.name).set({ id: mbtiList ? mbtiList.length + 1 : 1, name: person.name, mbti: person.mbti });
