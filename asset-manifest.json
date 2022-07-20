@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "//hasangwon.github.io/mbtimemo/static/css/main.51893ab2.css",
+    "main.js": "//hasangwon.github.io/mbtimemo/static/js/main.6d2bb363.js",
+    "index.html": "//hasangwon.github.io/mbtimemo/index.html",
+    "main.51893ab2.css.map": "//hasangwon.github.io/mbtimemo/static/css/main.51893ab2.css.map",
+    "main.6d2bb363.js.map": "//hasangwon.github.io/mbtimemo/static/js/main.6d2bb363.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51893ab2.css",
+    "static/js/main.6d2bb363.js"
+  ]
+}
