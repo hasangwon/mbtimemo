@@ -82,6 +82,7 @@ const App = () => {
                 <li key={idx} className="list">
                   <b className="index">{idx + 1} :</b> <span className="names">{val.name}</span> / {val.mbti}
                   {val.id === mbtiList.length ? <span className="new">new!</span> : ""}
+                  {val.name === "우혜림" ? <span className="new">hot</span> : ""}
                 </li>
               );
             })}
@@ -93,6 +94,8 @@ const App = () => {
               return (
                 <li key={idx} className="list">
                   <b className="index">{idx + 1} :</b> <span className="names">{val.mbti}</span> / {val.name}
+                  {val.id === mbtiList.length ? <span className="new">new!</span> : ""}
+                  {val.name === "우혜림" ? <span className="new">hot</span> : ""}
                 </li>
               );
             })}
