@@ -1,4 +1,4 @@
-#link
+link
 https://hasangwon.github.io/mbtimemo/
 
 ### mbti 메모장
