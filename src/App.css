@@ -12,8 +12,14 @@
   font-family: "CookieRun-Regular";
 }
 
+@media only screen and (max-width: 580px) {
+  .body {
+    flex-direction: column;
+  }
+}
+
 .content {
-  margin: 10%;
+  margin: 0 10%;
   display: flex;
   flex-direction: column;
   align-items: center;

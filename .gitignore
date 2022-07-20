@@ -24,3 +24,4 @@ yarn-error.log*
 
 #firebase
 Firestore.js
+FirestoreEx.js

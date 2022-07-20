@@ -7,6 +7,8 @@ const App = () => {
   const [person, setPerson] = useState({});
   const [count, setCount] = useState(0);
   const [sort, setSort] = useState("name");
+  const english = /[a-zA-Z]/;
+  const korean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
 
   useEffect(() => {
     const mbti = firestore.collection("mbti").orderBy(sort, "asc");
@@ -24,9 +26,19 @@ const App = () => {
   const setData = (e) => {
     e.preventDefault();
     const mbti = firestore.collection("mbti");
-    mbti.doc(person.name).set({ id: mbtiList ? mbtiList.length + 1 : 1, name: person.name, mbti: person.mbti });
-    setPerson({ name: "", mbti: "" });
-    setCount((count) => count + 1);
+
+    if (!english.test(person.mbti)) {
+      alert("MBTI 영어로 써");
+      return;
+    }
+    if (person.name && person.mbti) {
+      mbti.doc(person.name).set({ id: mbtiList ? mbtiList.length + 1 : 1, name: person.name, mbti: person.mbti });
+      setPerson({ name: "", mbti: "" });
+      setCount((count) => count + 1);
+      alert("굿~!");
+    } else {
+      alert("다 쓰세요");
+    }
   };
 
   return (
@@ -68,19 +80,19 @@ const App = () => {
           <div className="mbtiBox">
             {mbtiList.map((val, idx) => {
               return (
-                <li key={val.id} className="list">
+                <li key={idx} className="list">
                   <b className="index">{idx + 1} :</b> <span className="names">{val.name}</span> / {val.mbti}
                   {val.id === mbtiList.length ? <span className="new">new!</span> : ""}
                 </li>
               );
             })}
           </div>
-        )}{" "}
+        )}
         {sort === "mbti" && (
           <div className="mbtiBox">
             {mbtiList.map((val, idx) => {
               return (
-                <li key={val.id} className="list">
+                <li key={idx} className="list">
                   <b className="index">{idx + 1} :</b> <span className="names">{val.mbti}</span> / {val.name}
                 </li>
               );
@@ -94,43 +106,3 @@ const App = () => {
 };
 
 export default App;
-
-// const [users, setUsers] = useState([]);
-// const [usersInDoc, setUsersInDoc] = useState([]);
-
-// useEffect(() => {
-// const user = firestore.collection("user");
-// user.get().then((doc) => {
-//   doc.forEach((val) => setUsers((users) => [...users, val.data()]));
-// });
-// user
-//   .doc("users")
-//   .get()
-//   .then((doc) => {
-//     doc.data().list.forEach((val) => setUsersInDoc((users) => [...users, val]));
-//   });
-// }, []);
-
-/* <h1>collection</h1>
-      <div>
-        {users.map((val, idx) => {
-          return (
-            <li key={idx}>
-              <b>document</b> - id:{val.id} <b>field</b>:name : {val.name} / <b>field</b>:age : {val.age}
-            </li>
-          );
-        })}
-      </div>
-      <br />
-
-      <h1>Document</h1>
-      <div>
-        <h2>field:list</h2>
-        {usersInDoc.map((val, idx) => {
-          return (
-            <li key={idx}>
-              <b>list[{idx}]</b> - <b>mapping</b> id:{val.id} name : {val.name} / age : {val.age}
-            </li>
-          );
-        })}
-      </div> */
