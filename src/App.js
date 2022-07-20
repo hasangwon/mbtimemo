@@ -8,7 +8,6 @@ const App = () => {
   const [count, setCount] = useState(0);
   const [sort, setSort] = useState("name");
   const english = /[a-zA-Z]/;
-  const korean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
 
   useEffect(() => {
     const mbti = firestore.collection("mbti").orderBy(sort, "asc");
